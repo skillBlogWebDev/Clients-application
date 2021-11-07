@@ -1,0 +1,72 @@
+/* fonts */
+@font-face {
+    font-family: 'Open-sans';
+    src: local('OpenSansRegular'), local('OpenSans-Regular'),
+    url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Open-sans';
+    src: local('OpenSansSemiBold'), local('OpenSans-SemiBold'),
+    url('../fonts/OpenSans-SemiBold.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Open-sans';
+    src: local('OpenSansBold'), local('OpenSans-Bold'),
+    url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+}
+
+/* common specification */
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open-sans', sans-serif;
+    margin: 0;
+    background-color: var(--color-wild-sand);
+}
+
+*,*::after,*::before {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.btn-reset {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+:root {
+    --color-white: #ffffff;
+    --color-wild-sand: #f5f5f5;
+    --color-silver-chalice: #b0b0b0;
+}
+
+.container {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 0 15px;
+}

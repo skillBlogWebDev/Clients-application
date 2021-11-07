@@ -1,0 +1,38 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32), 0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32);
+    background-color: var(--color-white);
+}
+
+.header__container {
+    padding-top: 10px;
+    padding-bottom: 12px;
+    max-width: 1355px;
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    display: block;
+    margin-right: 33px;
+}
+
+.header__form {
+    width: 100%;
+}
+
+.header__input {
+    height: 44px;
+    width: 100%;
+    max-width: 581px;
+    padding-left: 16px;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+.header__input::placeholder {
+    font-size: 14px;
+    color: var(--color-silver-chalice);
+}
