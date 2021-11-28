@@ -70,7 +70,7 @@ export const createClientsForm = () => {
     labelName.append(requiredName);
     labelSurname.append(requiredSurname);
     formFloatingName.append(inputName, labelName);
-    formFloatingSurname.append(inputName, labelSurname);
+    formFloatingSurname.append(inputSurname, labelSurname);
     formFloatingLastName.append(inputLastName, labelLastName);
     contactsBlock.append(addContactBtn);
     form.append(

@@ -1,0 +1,173 @@
+.modal-active {
+    animation: fade .3s ease-in-out .3s forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/Union.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.modal__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-black3);
+}
+
+.modal__form {
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-floating {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form-floating > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    font-size: 14px;
+    padding-top: 5px;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+    color: var(--color-silver-chalice);
+}
+
+.form-floating > .modal__input:focus~label,
+.form-floating > .modal__input:not(:placeholder-shown)~label {
+    top: -10px;
+    transform: scale(.85) translate(.15rem, -.5rem);
+}
+
+.modal__input::placeholder {
+    font-size: 0;
+}
+
+.modal__input {
+    display: block;
+    outline: none;
+    width: 100%;
+    border: none;
+    height: 28px;
+    border-bottom: 1px solid var(--color-gray-suit);
+}
+
+.modal__form button {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.modal__contact {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -30px;
+    margin-bottom: 25px;
+    background-color: var(--color-gray-suit);
+}
+
+.modal__btn-contact {
+    border: none;
+    cursor: pointer;
+    display: none;
+    position: relative;
+    padding-left: 16px;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    transition: color .3s ease-in-out;
+    background-color: transparent;
+    color: var(--color-black3);
+}
+
+.modal__btn-contact:hover {
+    color: var(--color-emerald);
+    transition: color .3s ease-in-out;
+}
+
+.modal__label > span {
+    color: var(--color-emerald);
+}
+
+
+.modal__btn-contact.modal__btn-contact--active {
+    display: flex;
+}
+
+.btn-contact__svg {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: -5px;
+    width: 16px;
+    height: 16px;
+    fill: var(--color-emerald);
+}
+
+.btn-contact__svg--hover,
+.btn-contact__svg--default {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.btn-contact__svg--hover.btn-contact__svg--active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.btn-contact__svg--default.btn-contact__svg--active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+.modal__btn-save {
+    padding: 12px 35px;
+    align-self: center;
+    position: relative;
+    margin-bottom: 5px;
+    transition: opacity .3s ease-in-out;
+}
+
+.modal__btn-save:hover {
+    transition: opacity .3s ease-in-out;
+    opacity: 0.5;
+}
+
+.modal__btn-back {
+    font-weight: 400;
+    font-size: 12px;
+    align-self: center;
+    padding-bottom: 1px;
+    border-bottom: 1px solid var(--color-black3);
+    color: var(--color-black3);
+}
