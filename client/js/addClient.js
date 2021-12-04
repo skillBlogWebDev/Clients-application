@@ -12,6 +12,19 @@ export const addClientModal = () => {
     modal.append(modalContent);
     modalContent.append(createForm.modalClose, createForm.modalTitle, createForm.form);
 
+    createForm.form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let contacts = [];
+        let clientObj = {};
+
+        clientObj.name = createForm.inputName.value;
+        clientObj.surname = createForm.inputSurname.value;
+        clientObj.lastName = createForm.inputLastName.value;
+        clientObj.contacts = contacts;
+        console.log(clientObj);
+    });
+
     createForm.modalClose.addEventListener('click', () => {
         modal.remove();
     });
