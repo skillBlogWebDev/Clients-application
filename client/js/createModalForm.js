@@ -93,6 +93,11 @@ export const createClientsForm = () => {
             const contactItem = createContactItem();
             contactsBlock.prepend(contactItem.contact);
             contactsBlock.style.backgroundColor = 'var(--color-athens-gray)';
+            if (contactsItems.length >= 5) {
+                document.querySelector('.modal__content').style.top = '70%';
+            } else {
+                document.querySelector('.modal__content').style.top = '50%';
+            }
         } else {
             const contactItem = createContactItem();
             contactsBlock.prepend(contactItem.contact);
