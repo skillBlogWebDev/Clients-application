@@ -1,0 +1,89 @@
+.clients__table {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.clients__item {
+    display: flex;
+    padding: 18px;
+    border-bottom: 1px solid var(--color-gray-suit);
+    background-color: #fff;
+}
+
+.client__id {
+    width: 7%;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: var(--color-silver-chalice);
+}
+
+.clients__full-name {
+    width: calc(32% + 5px);
+    font-size: 14px;
+    color: var(--color-black3);
+}
+
+.clients__full-name span {
+    display: inline-block;
+}
+
+.clients__full-name span:not(:last-child) {
+    margin-right: 5px;
+}
+
+.clients__created {
+    width: calc(15% - 1px);
+}
+
+.clients__changed {
+    width: calc(15% + 6px);
+    padding-left: 5px;
+}
+
+.created__date,
+.changed__date {
+    margin-right: 7px;
+    font-size: 14px;
+    color: var(--color-black3);
+}
+
+.created__time,
+.changed__time {
+    font-size: 14px;
+    color: var(--color-silver-chalice);
+}
+
+.clients__contacts {
+    margin: -10px 2px -17px 0;
+    max-width: 120px;
+    min-width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.clients__actions {
+    display: flex;
+    align-items: center;
+}
+
+.clients__actions button {
+    display: inline-block;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-color: transparent;
+    padding-left: 20px;
+    color: var(--color-black3);
+}
+
+.clients__edit {
+    margin-right: 32px;
+    background-image: url('../img/edit.svg');
+}
+
+.clients__delete {
+    margin-right: 32px;
+    background-image: url('../img/cancel.svg');
+}
