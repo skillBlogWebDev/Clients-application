@@ -18,3 +18,9 @@ export const createClient = async (client) => {
     const result = await response.json();
     console.log(result);
 } 
+
+export const deleteClientItem = async (id) => {
+    const response = await fetch(`http://localhost:3000/api/clients/${id}`, {
+        method: 'DELETE',
+    });
+} 
