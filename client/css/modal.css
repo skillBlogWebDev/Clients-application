@@ -25,6 +25,14 @@
     background-position: center center;
 }
 
+.modal__id {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-silver-chalice);
+}
+
 .modal__title {
     margin: 0;
     margin-bottom: 30px;
