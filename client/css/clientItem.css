@@ -79,11 +79,47 @@
 }
 
 .clients__edit {
+    transition: color .3s ease-in-out;
     margin-right: 32px;
     background-image: url('../img/edit.svg');
 }
 
 .clients__delete {
+    transition: color .3s ease-in-out;
     margin-right: 32px;
     background-image: url('../img/cancel.svg');
 }
+
+.clients__edit:hover {
+    transition: color .3s ease-in-out;
+    color: var(--color-emerald);
+}
+
+.clients__delete:hover {
+    transition: color .3s ease-in-out;
+    color: var(--color-burnt-sienna);
+}
+
+.contacts__link {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 7px;
+}
+
+.contacts__link g,
+.contacts__link path {
+    transition: opacity .3s ease-in-out;
+}
+
+.contacts__link:hover g,
+.contacts__link:hover path {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}
+
+.contacts__link:not(:last-child) {
+    margin-right: 7px;
+}
+
+

@@ -116,7 +116,9 @@
     fill: var(--color-emerald);
 }
 
-
+.clients__tbody {
+    position: relative;
+}
 
 .clients__btn:hover {
     transition: color .3s ease-in-out, background-color .3s ease-in-out;
