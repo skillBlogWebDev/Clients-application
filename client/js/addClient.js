@@ -1,5 +1,7 @@
 import { sendClientData } from "./clientsApi.js";
 import { createClientsForm } from "./createModalForm.js";
+import { validateClientContact } from "./validateContact.js";
+import { validateClientForm } from "./validateForm.js";
 
 export const addClientModal = () => {
     const createForm = createClientsForm();
@@ -15,6 +17,9 @@ export const addClientModal = () => {
 
     createForm.form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        if (!validateClientForm()) {
+            return;
+        }
 
         const contactTypes = document.querySelectorAll('.contact__name');
         const contactValues = document.querySelectorAll('.contact__input');
@@ -22,6 +27,9 @@ export const addClientModal = () => {
         let clientObj = {};
 
         for (let i = 0; i < contactTypes.length; i++) {
+            if (!validateClientContact(contactTypes[i], contactValues[i])) {
+                return;
+            }
             contacts.push({
                 type: contactTypes[i].innerHTML,
                 value: contactValues[i].value
