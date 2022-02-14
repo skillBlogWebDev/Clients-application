@@ -79,12 +79,14 @@
 }
 
 .clients__edit {
+    position: relative;
     transition: color .3s ease-in-out;
     margin-right: 32px;
     background-image: url('../img/edit.svg');
 }
 
 .clients__delete {
+    position: relative;
     transition: color .3s ease-in-out;
     margin-right: 32px;
     background-image: url('../img/cancel.svg');
@@ -122,4 +124,37 @@
     margin-right: 7px;
 }
 
+.action-wait {
+    background-image: none;
+}
 
+.actions__spinner {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spinner .3s ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+  
+  .clients__edit .actions__spinner svg {
+    stroke: var(--color-emerald);
+    fill: none;
+  }
+  
+  .clients__delete .actions__spinner svg {
+    stroke: var(--color-burnt-sienna);
+    fill: none;
+  }
+  
+  @keyframes spinner {
+    0%{
+      transform:rotate(0deg)
+    }
+  
+    100%{
+      transform:rotate(360deg)
+    }
+  }

@@ -1,4 +1,5 @@
 import { createClientsForm } from "./createModalForm.js";
+import { createClientItem } from "./createClientItem.js";
 import { deleteClientModal } from './createDeleteModal.js';
 import { createContactItem } from "./createContact.js";
 import { sendClientData } from "./clientsApi.js";
@@ -25,8 +26,20 @@ export const editClientModal = (data) => {
 
         import('./clientsApi.js').then(({ deleteClientItem }) => {
             deleteModal.deleteModalDelete.addEventListener('click', () => {
-                deleteClientItem(data.id);
-                document.getElementById(data.id).remove();
+                try {
+                    deleteModal.deleteSpinner.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        deleteClientItem(data.id);
+                        document.getElementById(data.id).remove();
+                        deleteModal.deleteModal.remove();
+                        editModal.remove();
+                    }, 1500);
+                } catch (error) {
+                    console.log(error);
+                } finally {
+                    setTimeout(() => deleteModal.deleteSpinner.style.display = 'none', 1500);
+                }
             });
         });
     });
@@ -53,7 +66,7 @@ export const editClientModal = (data) => {
         createForm.addContactBtn.classList.remove('modal__btn-contact--active');
     }
 
-    createForm.form.addEventListener('submit', (e) => {
+    createForm.form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const contactTypes = document.querySelectorAll('.contact__name');
@@ -73,7 +86,21 @@ export const editClientModal = (data) => {
         client.lastName = createForm.inputLastName.value;
         client.contacts = contacts;
 
-        sendClientData(client, 'PATCH', data.id);
+        const spinner = document.querySelector('.modal__spinner');
+
+        try {
+            spinner.style.display = 'block';
+            const editedData = await sendClientData(client, 'PATCH', data.id);
+            setTimeout(() => {
+                document.getElementById(editedData.id).remove();
+                document.querySelector('.clients__tbody').append(createClientItem(editedData));
+                editModal.remove();
+            }, 1500);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setTimeout(() => spinner.style.display = 'block', 1500);
+        }
     });
 
     createForm.modalTitle.append(titleId);

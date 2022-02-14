@@ -193,3 +193,31 @@
     max-width: 255px;
     color: var(--color-burnt-sienna);
 }
+
+.modal__spinner {
+    position: absolute;
+    display: none;
+    top: 10px;
+    left: 13px;
+    animation: spinner .3s ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+  }
+
+.modal__spinner svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--color-white);
+    fill: none;
+}
+  
+  @keyframes spinner {
+    0%{
+      transform:rotate(0deg)
+    }
+  
+    100%{
+      transform:rotate(360deg)
+    }
+  }

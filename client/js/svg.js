@@ -71,3 +71,8 @@ export const svgPreloadMain = `
     <circle class="back" cx="17" cy="17" r="14"></circle>
   <circle class="front" cx="17" cy="17" r="14"></circle>
 </svg>`;
+
+export const svgSpinner = `
+<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1.00008 6.04008C1.00008 8.82356 3.2566 11.0801 6.04008 11.0801C8.82356 11.0801 11.0801 8.82356 11.0801 6.04008C11.0801 3.2566 8.82356 1.00008 6.04008 1.00008C5.38922 1.00008 4.7672 1.12342 4.196 1.34812" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+</svg>`;
