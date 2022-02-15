@@ -9,12 +9,12 @@ export const createClientsSection = () => {
     const main = document.createElement('main');
     const sortingDisplay = document.createElement('thead');
     const theadTr = document.createElement('tr');
-    const sortingDisplayId = document.createElement('td');
-    const sortingDisplayName = document.createElement('td');
-    const sortingDisplayCreate = document.createElement('td');
-    const sortingDisplayEdit = document.createElement('td');
-    const sortingDisplayContacts = document.createElement('td');
-    const sortingDisplayActions = document.createElement('td');
+    const sortingDisplayId = document.createElement('th');
+    const sortingDisplayName = document.createElement('th');
+    const sortingDisplayCreate = document.createElement('th');
+    const sortingDisplayEdit = document.createElement('th');
+    const sortingDisplayContacts = document.createElement('th');
+    const sortingDisplayActions = document.createElement('th');
     const sortingDisplaySpan = document.createElement('span');
     const addUserBtn = document.createElement('button');
     const addUserBtnSvg = document.createElement('span');
@@ -23,6 +23,42 @@ export const createClientsSection = () => {
     const tbody = document.createElement('tbody');
     const createSpan = document.createElement('span');
     const editSpan = document.createElement('span');
+
+    const sortDisplayItems = [sortingDisplayId, sortingDisplayName, sortingDisplayCreate, sortingDisplayEdit];
+
+    for (const item of sortDisplayItems) {
+        item.addEventListener('click', () => {
+            if (item.classList.contains('sort-down')) {
+                item.classList.remove('sort-down');
+                item.classList.add('sort-up');
+            } else {
+                item.classList.add('sort-down');
+                item.classList.remove('sort-up');
+            }
+        });
+    }
+
+    sortingDisplayCreate.addEventListener('click', () => {
+        if (sortingDisplayCreate.classList.contains('sort-down')) {
+            createSpan.classList.add('sort-up');
+        } else {
+            createSpan.classList.remove('sort-up');
+        }
+    });
+
+    sortingDisplayEdit.addEventListener('click', () => {
+        if (sortingDisplayEdit.classList.contains('sort-down')) {
+            editSpan.classList.add('sort-up');
+        } else {
+            editSpan.classList.remove('sort-up');
+        }
+    });
+
+
+    sortingDisplayId.setAttribute('data-type', 'id');
+    sortingDisplayName.setAttribute('data-type', 'text');
+    sortingDisplayCreate.setAttribute('data-type', 'create');
+    sortingDisplayEdit.setAttribute('data-type', 'update');
 
     section.classList.add('clients');
     tableWrapper.classList.add('clients__wrapper');
