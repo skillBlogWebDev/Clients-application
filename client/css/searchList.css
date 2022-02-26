@@ -1,0 +1,28 @@
+.header__inner {
+    position: relative;
+    width: 100%;
+}
+
+.find-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    max-width: 581px;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+}
+
+.find-list__link:not(:last-child) {
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--color-gray-suit);
+}
+
+.hide {
+    display: none;
+}
