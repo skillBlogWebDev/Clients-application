@@ -109,9 +109,8 @@ export const createClientsSection = () => {
         sortingDisplayActions
     );
     sortingDisplay.append(theadTr);
-    tableWrapper.append(clientsTable);
+    tableWrapper.append(clientsTable, createPreloader());
     clientsTable.append(sortingDisplay, tbody);
-    tbody.append(createPreloader());
     addUserBtn.append(addUserBtnSvg);
     container.append(h1, tableWrapper, addUserBtn);
 

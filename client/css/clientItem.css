@@ -1,5 +1,6 @@
 .clients__table {
     width: 100%;
+    min-width: 1186px;
     margin-bottom: 40px;
 }
 

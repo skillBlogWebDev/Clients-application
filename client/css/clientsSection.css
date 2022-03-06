@@ -117,10 +117,6 @@
     fill: var(--color-emerald);
 }
 
-.clients__tbody {
-    position: relative;
-}
-
 .clients__btn:hover {
     transition: color .3s ease-in-out, background-color .3s ease-in-out;
     background-color: var(--color-emerald);
@@ -161,4 +157,9 @@
 .display-info__item--change,
 .display-info__item--create {
     background-image: none;
+}
+
+.clients__wrapper {
+    position: relative;
+    overflow: auto;
 }
