@@ -30,7 +30,7 @@ export const createClientItem = (data) => {
     editSpinner.classList.add('actions__spinner');
     deleteSpinner.classList.add('actions__spinner');
     clientTr.classList.add('clients__item');
-    clientTr.id = data.id;
+    clientTr.id = data._id;
     clientIdTd.classList.add('client__id');
     clientFullName.classList.add('clients__full-name');
     clientName.classList.add('clients__name');
@@ -59,8 +59,8 @@ export const createClientItem = (data) => {
                     deleteClient.deleteSpinner.style.display = 'block';
                     
                     setTimeout(() => {
-                        deleteClientItem(data.id);
-                        document.getElementById(data.id).remove();
+                        deleteClientItem(data._id);
+                        document.getElementById(data._id).remove();
                         deleteClient.deleteModal.remove();
                     }, 1500);
                 } catch (error) {

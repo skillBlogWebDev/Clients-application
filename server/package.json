@@ -1,0 +1,23 @@
+{
+  "name": "clients",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:migrate": "migrate-mongo up",
+    "dev": "npm run db:migrate && nodemon index.js",
+    "start": "npm run db:migrate && node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "migrate-mongo": "^8.2.3",
+    "mongodb": "^4.4.1",
+    "nodemon": "^2.0.15"
+  }
+}
