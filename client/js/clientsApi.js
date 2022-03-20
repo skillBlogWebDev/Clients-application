@@ -1,11 +1,10 @@
 export const getClients = async () => {
     try {
-        const response = await fetch('http://localhost:3000/api/clients', {
+        const response = await fetch('https://vast-castle-97855.herokuapp.com/api/clients', {
             method: 'GET'
         });
 
         const result = await response.json();
-        console.log(result);
 
         return result;
     } catch (error) {
@@ -15,7 +14,7 @@ export const getClients = async () => {
 
 export const sendClientData = async (client, method, id = null) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/clients/${method === 'POST' ? '' : id}`, {
+        const response = await fetch(`https://vast-castle-97855.herokuapp.com/api/clients/${method === 'POST' ? '' : id}`, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -34,7 +33,7 @@ export const sendClientData = async (client, method, id = null) => {
 
 export const deleteClientItem = async (id) => {
     try {
-        await fetch(`http://localhost:3000/api/clients/${id}`, {
+        await fetch(`https://vast-castle-97855.herokuapp.com/api/clients/${id}`, {
             method: 'DELETE',
         });
     } catch (error) {
@@ -44,7 +43,7 @@ export const deleteClientItem = async (id) => {
 
 export const findClient = async (value) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/clients?search=${value}`, {
+        const response = await fetch(`https://vast-castle-97855.herokuapp.com/api/clients?search=${value}`, {
             method: 'GET'
         });
 

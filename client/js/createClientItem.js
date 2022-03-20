@@ -99,7 +99,7 @@ export const createClientItem = (data) => {
  
     deleteSpinner.innerHTML = svgSpinner;
     editSpinner.innerHTML = svgSpinner;
-    clientId.textContent = Math.floor(Math.random() * 15);
+    clientId.textContent = data._id.substr(data._id.length - 1);
     clientName.textContent = data.name;
     clientSurname.textContent = data.surname;
     clientLastName.textContent = data.lastName;
@@ -125,6 +125,5 @@ export const createClientItem = (data) => {
         clientContacts,
         clientActions
     );
-
     return clientTr;
 }
